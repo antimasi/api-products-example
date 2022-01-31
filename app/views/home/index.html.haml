@@ -1,0 +1,42 @@
+.container
+  #title-container
+    %h1 API de Productos
+  #info-container 
+    %p=h("Este es un API para pruebas que cualquiera puede consultar. La idea es montar un pequeño demo con Ruby on Rails, " ) |
+        
+    
+    %p Para poder acceder a los request se debe usar la dirección 
+        
+    %p 
+      %b https://api-products-example.herokuapp.com/api/{KEY_ID}/v1/
+    %P Donde se deberá asignar un encabezado de HTTP 'X-Auth-Token'
+    
+    %p=h("El KEY_ID y el TOKEN de momento son el mismo para cualquiera que quiera consumir el API, A futuro esto podría cambiar. " + |
+        "La idea de esto es para propositos didacticos, para que se pueda implementar un mensaje de error al no tener credenciales correctas.") |
+    %table.table.table-bordered.table-dark.table-striped      
+      %tbody
+        %tr
+          %td KEY_ID
+          %td adKz4so2dvIE4rQ2oRU0sb7bPNm9YO3kySkmoxLP
+        %tr 
+          %td TOKEN_ID
+          %td jWgFLWP2gkgWqCd7YpqwbSyfbioTV2i4TKQswR4
+   
+    
+    %p Al no pasar correctamente las credenciales el sistema devolverla un error 401: Unauthorized
+    
+    %h2 Consultas disponibles
+    
+    %table.table.table-striped.table-bordered.table-dark
+      %thead 
+        %tr 
+          %th Descripción
+          %th Endpoint
+      %tbody 
+        %tr 
+          %td Obtener todos los productos 
+          %td /products
+        %tr 
+          %td  Obtener un producto especifico por ID
+          %td /products/:id
+    
